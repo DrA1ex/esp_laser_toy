@@ -71,8 +71,11 @@ void laser_animation() {
     if (servo_x.is_moving() || servo_y.is_moving()) return;
     if (millis() - _end_time < app.config.waiting) return;
 
-    servo_x.write(random(app.config.servo_x.begin, app.config.servo_x.end));
-    servo_y.write(random(app.config.servo_y.begin, app.config.servo_y.end));
+    if (app.config.servo_x.enabled)
+        servo_x.write(random(app.config.servo_x.begin, app.config.servo_x.end));
+
+    if (app.config.servo_y.enabled)
+        servo_y.write(random(app.config.servo_y.begin, app.config.servo_y.end));
 
     if (++_move > app.config.moves) {
         _move = 0;

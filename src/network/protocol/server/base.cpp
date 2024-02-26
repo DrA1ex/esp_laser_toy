@@ -57,7 +57,7 @@ Response ServerBase::_handle_servo_command(PacketHeader *header, const void *dat
     ServoConfig *config;
     ServoInstance servo;
 
-    if (header->type >= PacketType::SERVO_Y_NEUTRAL) {
+    if (header->type >= PacketType::SERVO_Y_ENABLED) {
         config = &app().config.servo_y;
         servo = ServoInstance::Y_AXIS;
     } else {

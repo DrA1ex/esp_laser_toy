@@ -7,11 +7,11 @@ Application::Application(Storage<Config> &config_storage, SmoothServo &servo_x, 
 void Application::load() {
     digitalWrite(LASER_PIN, config.power ? PIN_ENABLED : PIN_DISABLED);
 
-    servo_x.set_speed(config.speed / 2);
-    servo_y.set_speed(config.speed / 2);
+    servo_x.set_speed(config.speed);
+    servo_y.set_speed(config.speed);
 
-    servo_x.set_acceleration(config.acceleration / 2);
-    servo_y.set_acceleration(config.acceleration / 2);
+    servo_x.set_acceleration(config.acceleration);
+    servo_y.set_acceleration(config.acceleration);
 }
 
 void Application::update() {
