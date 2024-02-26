@@ -3,10 +3,10 @@ import {PacketType} from "./network/cmd.js";
 export const PropertyConfig = [{
     key: "general", section: "General", props: [
         {key: "power", title: "Power", type: "trigger", cmd: [PacketType.POWER_ON, PacketType.POWER_OFF]},
-        {key: "speed", title: "Speed", type: "wheel", limit: 255, cmd: PacketType.SPEED},
-        {key: "acceleration", title: "Acceleration", type: "wheel", limit: 255, cmd: PacketType.ACCELERATION},
-        {key: "moves", title: "Moves", type: "wheel", limit: 255, cmd: PacketType.MOVES},
-        {key: "waiting", title: "Wait, ms", type: "wheel", kind: "Uint16", size: 2, limit: 60000, cmd: PacketType.WAITING},
+        {key: "speed", title: "Speed", type: "wheel", limit: 128, cmd: PacketType.SPEED},
+        {key: "acceleration", title: "Acceleration", type: "wheel", limit: 128, cmd: PacketType.ACCELERATION},
+        {key: "moves", title: "Moves", type: "int", limit: 255, cmd: PacketType.MOVES},
+        {key: "waiting", title: "Wait, ms", type: "int", kind: "Uint16", size: 2, cmd: PacketType.WAITING},
     ],
 }, {
     key: "servo_x", section: "Horizontal", props: [
