@@ -26,6 +26,13 @@ void SmoothServo::write(uint8_t angle) {
     _target = _min + (_max - _min) * min<int32_t>(180, angle) / 180;
 }
 
+void SmoothServo::write_instant(uint8_t angle) {
+    if (!_attached) return;
+
+    write(angle);
+    _update_pos(_target);
+}
+
 void SmoothServo::tick() {
     if (!_attached || _current == _target) {
         _current_speed = 0;
