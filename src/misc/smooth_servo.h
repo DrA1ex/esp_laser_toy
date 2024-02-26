@@ -27,6 +27,7 @@ public:
     void tick();
 
     void write(uint8_t angle);
+    void write_instant(uint8_t angle);
 
     inline void set_speed(uint8_t speed) { _speed = max<uint8_t>(1, speed); }
     inline void set_acceleration(uint8_t value) { _acceleration = max<uint8_t>(1, value); }

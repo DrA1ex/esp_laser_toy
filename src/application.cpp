@@ -57,11 +57,11 @@ void Application::set_calibration_data(ServoInstance servo, uint8_t value) {
 
     switch (servo) {
         case ServoInstance::X_AXIS:
-            servo_x.write(value);
+            servo_x.write_instant(value);
             break;
 
         case ServoInstance::Y_AXIS:
-            servo_y.write(value);
+            servo_y.write_instant(value);
             break;
     }
 }
